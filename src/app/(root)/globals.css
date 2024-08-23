@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "IRANYekan";
+    src: url(/iranyekanwebextrabold.woff) format("woff");
+    font-weight: 800;
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    src: url(/iranyekanwebbold.woff2) format("woff2");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    src: url(/iranyekanwebmedium.woff) format("woff");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    src: url(/iranyekanwebregular.woff2) format("woff2");
+    font-weight: 400;
+  }
+}
+
+* {
+  font-family: "IRANYekan";
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
