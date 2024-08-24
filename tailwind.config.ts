@@ -23,7 +23,9 @@ const config: Config = {
         darkprim: "#00A8FF",
         transparent: "transparent",
         light: "#A1E9FF",
-        prple: "#462697"
+        prple: "#462697",
+        greenLight: "#84EF9D",
+        green: "#005C04"
       },
       keyframes: {
         swap: {

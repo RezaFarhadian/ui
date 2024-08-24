@@ -95,7 +95,7 @@ export default function Card({
         <span className="text-blue">{cost.toLocaleString("fa-IR")}تومان</span>
         <span className="line-through">{costBeforeDiscount.toLocaleString("fa-IR")}تومان</span>
       </div>
-      <CardButton />
+      <CardButton>مشاهده همه محصولات</CardButton>
     </div>
   )
 }

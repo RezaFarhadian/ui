@@ -6,6 +6,7 @@ import Battery from "../../public/cart/battery.svg"
 import Memory from "../../public/cart/memory.svg"
 import Processor from "../../public/cart/processor.svg"
 import Size from "../../public/cart/size.svg"
+import CardButton from "./CardButton"
 
 export default function ProductCard({ className }: {className:any}) {
   return (
@@ -15,6 +16,9 @@ export default function ProductCard({ className }: {className:any}) {
       bg-lightprim
       rounded-3xl
       relative
+      flex
+      flex-col
+      items-center
     `}>
       <div className="
         border-dashed
@@ -25,6 +29,7 @@ export default function ProductCard({ className }: {className:any}) {
         justify-between
         text-blue
         font-bold
+        w-full
       ">
         <span>سایبر ماندی</span>
         <span>08:33:55</span>
@@ -37,6 +42,7 @@ export default function ProductCard({ className }: {className:any}) {
         font-bold
         text-blue
         text-sm
+        w-full
       ">
         <div>5%</div>
         <div className="flex flex-row">مقایسه <Image src={Compare} alt="" /></div>
@@ -44,7 +50,7 @@ export default function ProductCard({ className }: {className:any}) {
       <div className="mt-8">
         <Image src={iPhone} alt="" />
       </div>
-      <div className="flex flex-col gap-2 absolute top-[110px]">
+      <div className="flex flex-col gap-2 absolute top-[110px] right-[20px]">
         <Dot color="#462697" />
         <Dot color="#000000" />
         <Dot color="#00FF29" />
@@ -67,6 +73,23 @@ export default function ProductCard({ className }: {className:any}) {
           <Image src={Memory} alt="" width={20} />
           <span>256</span>
         </div>
+      </div>
+      <div className="text-center flex flex-col gap-4 mt-4">
+        <h2 className="font-bold text-md">Iphone 13 pro plus</h2>
+        <p className="text-xs">گوشی موبایل مدل آیفون 13 پرو </p>
+        <p className="text-xs">ظرفیت 512 گیگابایت رم 12 گیگ ...</p>
+        <div className="
+          flex
+          flex-row
+          gap-2
+          justify-between
+          font-bold
+          text-xs
+        ">
+          <span className="text-blue">۲۵۰٬۰۰۰٬۰۰۰تومان</span>
+          <span className="line-through">۲۵۰٬۰۰۰٬۰۰۰تومان</span>
+        </div>
+        <CardButton>افزودن به سبد خرید</CardButton>
       </div>
     </div>
   )

@@ -6,26 +6,33 @@ interface ButtonProps extends React.ButtonHTMLAttributes<
 > {
   title: string
   icon?: StaticImageData
+  outline?: boolean
+  color?: string
+  fullWidth?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
   title,
   icon,
+  outline,
+  color,
+  fullWidth,
   ...props
 }) => {
+  const c = color || "blue"
   return (
-    <button {...props} className="
+    <button {...props} className={`
       flex
+      ${ fullWidth ? "w-full" : ""}
       flex-row
       gap-2
       justify-center
       items-center
-      bg-blue
-      text-main
+      ${outline ? `bg-transparent text-${c} border-2 border-${c}` : `bg-${c} text-main`}
       disabled:bg-[#0000004D]
       rounded-3xl
       p-2
-    ">
+    `}>
       { icon && <Image src={icon} alt="" width={20}/> }
       {title}
     </button>

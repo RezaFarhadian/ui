@@ -55,16 +55,26 @@ export default function CartLayout({ children }:
 
       {
         !empty &&
-          <PaperContainer outline label={<PaperLabel fill title="بازدیدهای اخیر" />}>
-            <div className="flex flex-row gap-2">
-              <Link href=""><ProductCard className="basis-1/6" /></Link>
-              <Link href=""><ProductCard className="basis-1/6" /></Link>
-              <Link href=""><ProductCard className="basis-1/6" /></Link>
-              <Link href=""><ProductCard className="basis-1/6" /></Link>
-              <Link href=""><ProductCard className="basis-1/6" /></Link>
-              <Link href=""><ProductCard className="basis-1/6" /></Link>
-            </div>
-          </PaperContainer>        
+          <>
+            <PaperContainer outline label={<PaperLabel fill title="بازدیدهای اخیر" />}>
+              <div className="flex flex-row gap-4 items-center justify-center">
+                <Link href=""><ProductCard className="basis-1/5" /></Link>
+                <Link href=""><ProductCard className="basis-1/5" /></Link>
+                <Link href=""><ProductCard className="basis-1/5" /></Link>
+                <Link href=""><ProductCard className="basis-1/5" /></Link>
+                <Link href=""><ProductCard className="basis-1/5" /></Link>
+              </div>
+            </PaperContainer>
+            <PaperContainer outline label={<PaperLabel fill title="خریداران کالاهای زیر را نیز خریداری کرده اند" />}>
+              <div className="flex flex-row gap-4 items-center justify-center">
+                <Link href=""><ProductCard className="basis-1/5" /></Link>
+                <Link href=""><ProductCard className="basis-1/5" /></Link>
+                <Link href=""><ProductCard className="basis-1/5" /></Link>
+                <Link href=""><ProductCard className="basis-1/5" /></Link>
+                <Link href=""><ProductCard className="basis-1/5" /></Link>
+              </div>
+            </PaperContainer>
+          </>
       }
     </>
   )

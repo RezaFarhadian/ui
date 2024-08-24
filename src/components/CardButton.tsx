@@ -1,4 +1,8 @@
-export default function CardButton() {
+export default function CardButton({
+  children
+}: {
+  children: React.ReactNode
+}) {
   return (
     <div className="
       bg-gradi
@@ -9,7 +13,7 @@ export default function CardButton() {
       rounded-3xl
       cursor-pointer
     ">
-      مشاهده همه محصولات
+      {children}
     </div>
   )
 }
