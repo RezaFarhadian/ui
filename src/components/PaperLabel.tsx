@@ -20,6 +20,7 @@ export default function PaperLabel({
       p-2
       rounded-3xl
       font-bold
+      ${path?.length ? "cursor-pointer" : "" }
     `}>
       {title}
     </label>

@@ -1,22 +1,24 @@
 import ItemNumber from "@/components/cart/ItemNumber";
 import PaperContainer from "@/components/PaperContainer";
 import Image from "next/image"
-import PlusSvg from "../../../../../public/cart/plus.svg"
-import MinusSvg from "../../../../../public/cart/minus.svg"
-import TrashSvg from "../../../../../public/cart/trash.svg"
+import PlusSvg from "../../../../public/cart/plus.svg"
+import MinusSvg from "../../../../public/cart/minus.svg"
+import TrashSvg from "../../../../public/cart/trash.svg"
 import Dot from "@/components/Dot";
-import ArrowDownSvg from "../../../../../public/cart/arrow-down.svg"
+import ArrowDownSvg from "../../../../public/cart/arrow-down.svg"
 import Button from "@/components/Button";
-import OutlinePlusSvg from "../../../../../public/cart/outline-plus.svg"
-import ForwardSvg from "../../../../../public/cart/forward.svg"
+import OutlinePlusSvg from "../../../../public/cart/outline-plus.svg"
+import ForwardSvg from "../../../../public/cart/forward.svg"
 import DiscountCode from "@/components/cart/DiscountCode";
 import Switch from "@/components/Switch";
 import KalaLotus from "@/components/KalaLotus";
-import ZemanatSvg from "../../../../../public/cart/zemanat.svg"
+import ZemanatSvg from "../../../../public/cart/zemanat.svg"
+import GreenTrashSvg from "../../../../public/cart/green_trash.svg"
+import PriceLabel from "@/components/cart/PriceLabel";
 
-export default function MainCart() {
+export default function Cart() {
   return (
-    <div>
+    <div className="relative">
       <p>
         <b className="font-extrabold">سبد خرید</b>
         <span className="text-sm font-bold text-prple">2 قلم کالا</span>
@@ -120,15 +122,7 @@ export default function MainCart() {
                       flex-row
                       gap-2
                     ">
-                      <div className="
-                        rounded-3xl
-                        bg-prple
-                        text-main
-                        w-[200px]
-                        text-center
-                      ">
-                        600.000 تومان تخفیف
-                      </div>
+                      <PriceLabel price="600.000 تومان تخفیف" />
                       <div className="opacity-50 line-through">13.129.000 تومان</div>
                         <div className="
                           text-blue
@@ -155,8 +149,8 @@ export default function MainCart() {
                       items-center
                     ">
                       <div className="text-sm">بیمه: </div>
-                      <div className="bg-main rounded-3xl text-green p-2">
-                        حذف بیمه
+                      <div className="bg-main rounded-3xl text-green p-2 flex flex-row items-center justify-center gap-2 text-sm">
+                        <Image src={GreenTrashSvg} alt="" /> حذف بیمه
                       </div>
                     </div>
                     <div className="
@@ -181,8 +175,8 @@ export default function MainCart() {
                     justify-around
                     mt-4
                   ">
-                    <Button title="حذف کالا از سبد خرید" icon={TrashSvg} outline />
-                    <Button title="انتقال کالا به سبد خرید بعدی" icon={ForwardSvg} outline />
+                    <Button title="حذف کالا از سبد خرید" icon={TrashSvg} light />
+                    <Button title="انتقال کالا به سبد خرید بعدی" icon={ForwardSvg} light />
                   </div>
               </div>
             </div>
@@ -275,15 +269,7 @@ export default function MainCart() {
                       flex-row
                       gap-2
                     ">
-                      <div className="
-                        rounded-3xl
-                        bg-prple
-                        text-main
-                        w-[200px]
-                        text-center
-                      ">
-                        600.000 تومان تخفیف
-                      </div>
+                      <PriceLabel price="600.000 تومان تخفیف" />
                       <div className="opacity-50 line-through">13.129.000 تومان</div>
                         <div className="
                           text-blue
@@ -310,8 +296,8 @@ export default function MainCart() {
                       items-center
                     ">
                       <div className="text-sm">بیمه: </div>
-                      <div className="bg-main rounded-3xl text-green p-2">
-                        حذف بیمه
+                      <div className="bg-main rounded-3xl text-green p-2 flex flex-row items-center justify-center gap-2 text-sm">
+                        <Image src={GreenTrashSvg} alt="" /> حذف بیمه
                       </div>
                     </div>
                     <div className="
@@ -336,8 +322,8 @@ export default function MainCart() {
                     justify-around
                     mt-4
                   ">
-                    <Button title="حذف کالا از سبد خرید" icon={TrashSvg} outline />
-                    <Button title="انتقال کالا به سبد خرید بعدی" icon={ForwardSvg} outline />
+                    <Button title="حذف کالا از سبد خرید" icon={TrashSvg} light />
+                    <Button title="انتقال کالا به سبد خرید بعدی" icon={ForwardSvg} light />
                   </div>
               </div>
             </div>
@@ -345,6 +331,7 @@ export default function MainCart() {
         </div>
         <div className="basis-4/12 flex flex-col items-center w-full font-bold">
           <Button outline title="انتقال تمام کالاها به سبد خرید بعدی" icon={ForwardSvg} />
+          <div className="sticky top-0 w-full">
           <PaperContainer disableInnerPadding disablePadding outline label={<span className="mb-6">صورت حساب</span>}>
             <p className="
               mt-4
@@ -504,12 +491,13 @@ export default function MainCart() {
                   justify-between
                 ">
                   <div>تاریخ پرداخت قسط اول: </div>
-                  <div className="bg-prple rounded-3xl text-main pr-2 pl-2 text-xs font-medium" dir="ltr">30 000 000</div>
+                  <div className="bg-prple rounded-3xl text-main pr-2 pl-2 text-xs font-medium" dir="ltr">1402/08/07</div>
                 </div>
                 <Button color="blue" fullWidth title="تایید و ادامه سفارش" />
               </div>
             </div>
           </PaperContainer>
+          </div>
         </div>
       </div>
     </div>

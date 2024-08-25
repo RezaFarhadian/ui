@@ -16,11 +16,11 @@ export default function CartLayout({ children }:
   const TopLabels = empty ?
     <PaperLabel title="سبد خرید" fill /> :
     <>
-      <Link href="/cart/main">
-        <PaperLabel title="سبد خرید(2 قلم)" path="/cart/main" />
+      <Link href="/cart">
+        <PaperLabel title="سبد خرید(2 قلم)" path="/cart" />
       </Link>
-      <Link href="/cart/next">
-        <PaperLabel title="سبد خرید بعدی(7 قلم)" path="/cart/next" />
+      <Link href="/cart/future">
+        <PaperLabel title="سبد خرید بعدی(7 قلم)" path="/cart/future" />
       </Link>
     </>
 
@@ -57,21 +57,23 @@ export default function CartLayout({ children }:
         !empty &&
           <>
             <PaperContainer outline label={<PaperLabel fill title="بازدیدهای اخیر" />}>
-              <div className="flex flex-row gap-4 items-center justify-center">
-                <Link href=""><ProductCard className="basis-1/5" /></Link>
-                <Link href=""><ProductCard className="basis-1/5" /></Link>
-                <Link href=""><ProductCard className="basis-1/5" /></Link>
-                <Link href=""><ProductCard className="basis-1/5" /></Link>
-                <Link href=""><ProductCard className="basis-1/5" /></Link>
+              <div className="flex flex-row gap-2 items-center justify-center">
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
               </div>
             </PaperContainer>
             <PaperContainer outline label={<PaperLabel fill title="خریداران کالاهای زیر را نیز خریداری کرده اند" />}>
-              <div className="flex flex-row gap-4 items-center justify-center">
-                <Link href=""><ProductCard className="basis-1/5" /></Link>
-                <Link href=""><ProductCard className="basis-1/5" /></Link>
-                <Link href=""><ProductCard className="basis-1/5" /></Link>
-                <Link href=""><ProductCard className="basis-1/5" /></Link>
-                <Link href=""><ProductCard className="basis-1/5" /></Link>
+              <div className="flex flex-row gap-2 items-center justify-center">
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
+                <Link href=""><ProductCard className="basis-1/6" /></Link>
               </div>
             </PaperContainer>
           </>

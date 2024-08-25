@@ -8,7 +8,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<
   icon?: StaticImageData
   outline?: boolean
   color?: string
-  fullWidth?: boolean
+  fullWidth?: boolean,
+  light?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,6 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   outline,
   color,
   fullWidth,
+  light,
   ...props
 }) => {
   const c = color || "blue"
@@ -28,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
       gap-2
       justify-center
       items-center
-      ${outline ? `bg-transparent text-${c} border-2 border-${c}` : `bg-${c} text-main`}
+      ${outline ? `bg-transparent text-${c} border-2 border-${c}` : light ? "bg-lightprim text-blue border-2 border-blue" : `bg-${c} text-main`}
       disabled:bg-[#0000004D]
       rounded-3xl
       p-2
