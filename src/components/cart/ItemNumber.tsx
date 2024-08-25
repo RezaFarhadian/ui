@@ -1,6 +1,6 @@
 export default function ItemNumber({ num, bgWhite }: {
   num: number,
-  bgWhite: boolean
+  bgWhite?: boolean
 }) {
   return (
     <div className={`
