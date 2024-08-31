@@ -13,6 +13,7 @@ export default function PriceLabel({
       text-main
       p-2
       text-center
+      inline
     `}>
       {price}
     </div>

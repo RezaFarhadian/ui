@@ -12,7 +12,7 @@ export default function ItemNumber({ num, bgWhite }: {
       text-center
       font-extrabold
     `}>
-      {num}
+      {num.toLocaleString("fa")}
     </div>
   )
 }
