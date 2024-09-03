@@ -34,8 +34,8 @@ export default function Checkout() {
         justify-between
         mt-8
       ">
-        <Button title="بازگشت به مرحله قبلی" light />
-        <Button title="ثبت نهایی سفارش" />
+        <div className="basis-1/3"><Button title="بازگشت به مرحله قبلی" light fullWidth /></div>
+        <div className="basis-1/3"><Button title="ثبت نهایی سفارش" fullWidth/></div>
       </div>
     </section>
   )

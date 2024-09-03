@@ -1,5 +1,5 @@
 export default function Switch({ onChange }: {
-  onChange: (e: any) => void
+  onChange?: (e: any) => void
 }) {
   return (
     <label className="inline-flex items-center cursor-pointer">

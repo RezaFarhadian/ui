@@ -11,6 +11,8 @@ export default function BillFinal({
   payment,
   initialPaymentDate,
   sponsor,
+  buyer,
+  lastPaymentDate,
 }: {
   itemsCount: number,
   totalCost: number,
@@ -20,6 +22,8 @@ export default function BillFinal({
   payment: number,
   initialPaymentDate: string,
   sponsor: string,
+  buyer?: string,
+  lastPaymentDate?: string
 }) {
   return (
     <PaperContainer
@@ -35,6 +39,22 @@ export default function BillFinal({
         font-bold
       ">{itemsCount.toLocaleString("fa")} قلم کالا</p>
       <div className="flex flex-col gap-4 text-sm mt-4 font-bold">
+        {
+          buyer &&
+            <div className="
+              flex
+              flex-row
+              justify-between
+            ">
+              <div>خریدار: </div>
+              <div className="
+                rounded-3xl
+                bg-lightprim
+                text-prple
+                p-2
+              ">{buyer}</div>
+            </div>
+        }
         <div className="
           flex
           flex-row
@@ -94,12 +114,20 @@ export default function BillFinal({
               flex
               flex-row
               justify-between
-              border-b-[1px]
-              border-blue
-              pb-4
             ">
               <div>تاریخ پرداخت قسط اول: </div>
               <div><PriceLabel price={initialPaymentDate}/></div>
+            </div>
+        }
+        {
+          lastPaymentDate &&
+            <div className="
+              flex
+              flex-row
+              justify-between
+            ">
+              <div>تاریخ پرداخت قسط آخر: </div>
+              <div><PriceLabel price={lastPaymentDate}/></div>
             </div>
         }
         {
@@ -108,6 +136,9 @@ export default function BillFinal({
               flex
               flex-row
               justify-between
+              border-t-[1px]
+              border-blue
+              pt-4
             ">
               <div>ضامن: آقای/خانم </div>
               <div><PriceLabel price={sponsor}/></div>

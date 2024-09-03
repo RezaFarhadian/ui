@@ -8,8 +8,16 @@ import Image from "next/image"
 import BlackButton from "./BlackButton";
 import PlusBlackSvg from "../../../public/cart/plus_black.svg"
 import SponsorForm from "./SponsorForm";
+import TrustFilledSvg from "../../../public/cart/trust_filled.svg"
+import OnlyOneSponsorForm from "./OnlyOneSponsorForm";
 
-export default function Sponsor() {
+export default function Sponsor({
+  altIcon,
+  selectOne,
+}: {
+  altIcon?: boolean,
+  selectOne?: boolean,
+}) {
   const [expand, setExpand] = useState<boolean>(false)
   const toggleExpand = () => setExpand(!expand)
   return (
@@ -20,17 +28,17 @@ export default function Sponsor() {
     >
       {
         !expand &&
-          <div className="flex flex-row font-bold">
-            <div className="basis-2/3 flex flex-row items-center">
-              <Image src={SponsorSvg} alt="" />
-              <div className="flex flex-row items-center justify-around gap-12">
+          <div className="flex flex-row font-bold text-sm">
+            <div className="basis-8/12 flex flex-row items-center gap-2">
+              <Image src={altIcon ? TrustFilledSvg : SponsorSvg} alt="" />
+              <div className="flex flex-row items-center justify-around gap-6">
                 <span>آقا/خانم : <span className="text-prple">فلان فلانی</span></span>
                 <span>کد ملی : <span className="text-prple">12345678</span></span>
                 <span>تاریخ تولد : <span className="text-prple">1370/10/10</span></span>
               </div>
             </div>
             <div className="
-              basis-1/3
+              basis-4/12
               flex
               flex-row-reverse
               items-center
@@ -44,7 +52,7 @@ export default function Sponsor() {
           </div>
       }
       {
-        expand &&
+        expand && !selectOne &&
           <div>
             <div className="
               flex
@@ -61,6 +69,10 @@ export default function Sponsor() {
               </div>
             </div>
           </div>
+      }
+      {
+        expand && selectOne &&
+          <OnlyOneSponsorForm />
       }
     </PaperContainer>
   )

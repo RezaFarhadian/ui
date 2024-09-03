@@ -15,6 +15,7 @@ export default function BlackButton({ label, icon }: {
       flex-row
       items-center
       gap-3
+      justify-center
     ">
       <Image src={icon} alt="" />
       {label}

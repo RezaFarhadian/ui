@@ -24,6 +24,7 @@ export default function Address() {
       label={<span className="mb-6 font-extrabold">آدرس دریافت کالا</span>}
       outline
       disablePadding
+      disableInnerPadding
     >
       <div className="flex flex-row gap-2 justify-center font-extrabold">
         <div className={addr === "self" ? "text-blue" : ""}>خودم</div>
@@ -32,16 +33,16 @@ export default function Address() {
       </div>
       {
         !expand &&
-          <div className="flex flex-row font-bold">
-            <div className="basis-2/3 flex flex-row items-center">
+          <div className="flex flex-row font-bold text-sm">
+            <div className="basis-8/12 flex flex-row items-center gap-2">
               <Image src={HomeSvg} alt="" />
-              <div className="flex flex-row items-center justify-around gap-12">
+              <div className="flex flex-row items-center justify-around gap-4">
                 <span><span className="text-prple">تهران-تهران-خیابان اول کوچه دوم پلاک 0 طبقه 1</span></span>
                 <span>کد پستی: <span className="text-prple">0123456789</span></span>
               </div>
             </div>
             <div className="
-              basis-1/3
+              basis-4/12
               flex
               flex-row-reverse
               items-center

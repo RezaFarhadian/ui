@@ -11,7 +11,15 @@ import SelfForm from "./SelfForm";
 import BlackButton from "./BlackButton";
 import PlusBlackSvg from "../../../public/cart/plus_black.svg"
 
-export default function Deliveree() {
+export default function Deliveree({
+  disableEdit,
+  disableSwitch,
+  disablePadding,
+}: {
+  disableEdit?: boolean,
+  disableSwitch?: boolean,
+  disablePadding?: boolean
+}) {
   const [deliveree, setDeliveree] = useState<"self" | "another">("self")
   const delivereeOnChange = (e: any) => {
     if (!e.target.checked) setDeliveree("self")
@@ -24,35 +32,53 @@ export default function Deliveree() {
       label={<span className="mb-6 font-extrabold">تحویل‌گیرنده کالا</span>}
       outline
       disablePadding
+      disableInnerPadding
     >
-      <div className="flex flex-row gap-2 justify-center font-extrabold">
-        <div className={deliveree === "self" ? "text-blue" : ""}>خودم</div>
-        <div><Switch onChange={delivereeOnChange} /></div>
-        <div className={deliveree === "another" ? "text-blue" : ""}>شخص دیگر</div>
-      </div>
+      { !disableSwitch &&
+        <div className="flex flex-row gap-2 justify-center font-extrabold">
+          <div className={deliveree === "self" ? "text-blue" : ""}>خودم</div>
+          <div><Switch onChange={delivereeOnChange} /></div>
+          <div className={deliveree === "another" ? "text-blue" : ""}>شخص دیگر</div>
+        </div>
+      }
       {
         !expand &&
-          <div className="flex flex-row font-bold">
-            <div className="basis-2/3 flex flex-row items-center">
+          <div className="flex flex-row font-bold text-sm">
+            <div className={`
+              ${ disableEdit ? "basis-12/12" : "basis-8/12"}
+              flex
+              flex-row
+              items-center
+              gap-2
+            `}>
               <Image src={UserSolidSvg} alt="" />
-              <div className="flex flex-row items-center justify-around gap-12">
+              <div className={`
+                flex
+                flex-row
+                items-center
+                justify-around
+                ${ disableEdit ? "gap-12" : "gap-4"}
+              `}>
                 <span>آقا/خانم : <span className="text-prple">فلان فلانی</span></span>
                 <span>کد ملی : <span className="text-prple">12345678</span></span>
                 <span>تاریخ تولد : <span className="text-prple">1370/10/10</span></span>
               </div>
             </div>
-            <div className="
-              basis-1/3
-              flex
-              flex-row-reverse
-              items-center
-              gap-4
-              font-medium
-              cursor-pointer
-            " onClick={toggleExpand}>
-              <Image src={ArrowLeftSvg} alt="" />
-              <div className="opacity-90">{ deliveree == "another" ? "ویرایش/انتخاب" : "ویرایش"}</div>
-            </div>
+            {
+              !disableEdit &&
+                <div className="
+                  basis-4/12
+                  flex
+                  flex-row-reverse
+                  items-center
+                  gap-4
+                  font-medium
+                  cursor-pointer
+                " onClick={toggleExpand}>
+                  <Image src={ArrowLeftSvg} alt="" />
+                  <div className="opacity-90">{ deliveree == "another" ? "ویرایش/انتخاب" : "ویرایش"}</div>
+                </div>
+            }
           </div>
       }
       {
