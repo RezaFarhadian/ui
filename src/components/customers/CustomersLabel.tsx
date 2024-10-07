@@ -3,7 +3,7 @@ export default function CustomersLabel() {
     <h1 className="
       text-prple
       font-extrabold
-      text-xl
+      text-4xl
     ">
       بانک اطلاعاتی مشتریان
     </h1>

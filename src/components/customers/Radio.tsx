@@ -13,10 +13,14 @@ export default function Radio({
     <div className="
       flex
       flex-row
-      gap-2
+      gap-1
       items-center
     ">
-      <input type="radio" name={name} value={value} className={ green ? "accent-green" : ""} />
+      <input type="radio" name={name} value={value} className={`
+        ${green ? "accent-green" : ""}
+        h-6
+        w-6
+      `} />
       <label>{label}</label>
     </div>
   )

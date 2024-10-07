@@ -21,13 +21,15 @@ export default function TextField({
       items-center
       ${ disabled && "opacity-50" }
     `}>
-      <label>{label}:</label>
+      <label className="shrink-0">{label}:</label>
       <input type="text" placeholder={placeholder} className={`
         ${ green ? "border-green" : "border-lightprim"}
         border-[1px]
         rounded-lg
-        p-1
+        p-[1px]
         outline-none
+        font-bold
+        text-lg
         ${ fullWidth && "w-full"}
       `} disabled={disabled} dir={dir} />
     </div>

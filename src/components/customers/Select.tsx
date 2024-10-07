@@ -17,12 +17,13 @@ export default function Select({
       items-center
       basis-3/12
     ">
-      <label>{label}:</label>
+      <label className="shrink-0">{label}:</label>
       <select className={`
         ${ green ? "border-green" : "border-lightprim"}
         border-[1px]
         rounded-lg
         p-1
+        pl-6
         outline-none
         appearance-none
         bg-[url('/customers/arrow_down.svg')]

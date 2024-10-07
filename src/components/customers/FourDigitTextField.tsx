@@ -26,6 +26,7 @@ export default function fourDigitTextField({
           outline-none
           text-center
           w-12
+          font-bold
         `} disabled={disabled} />
       </div>
     )

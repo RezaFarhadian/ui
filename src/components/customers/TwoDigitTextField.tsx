@@ -25,7 +25,8 @@ export default function TwoDigitTextField({
           p-1
           outline-none
           text-center
-          w-6
+          w-8
+          font-bold
         `} disabled={disabled} />
       </div>
     )

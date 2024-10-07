@@ -9,14 +9,14 @@ export default function RadioGroup({
     <div className="
       flex
       flex-row
-      gap-2
+      gap-1
       items-center
     ">
       <label>{label}:</label>
       <div className="
         flex
         flex-row
-        gap-6
+        gap-4
         items-center
       ">
         {children}

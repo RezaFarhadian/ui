@@ -25,8 +25,8 @@ export default function Form({
       <div className="
         flex
         flex-row
-        gap-4
         flex-wrap
+        gap-4
         justify-between
       ">
         {children}
